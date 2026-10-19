@@ -1,0 +1,22 @@
+WEBVTT
+
+00:00:00.500 --> 00:00:06.633
+This is a sample lesson. First, load it on Office Wi-Fi to get a baseline.
+
+00:00:06.633 --> 00:00:14.267
+Now switch to Simulated 3G. The text appears straight away, but the media takes much longer.
+
+00:00:14.267 --> 00:00:21.633
+Find the file that is holding things up. Here, it is the 42 MB hero video.
+
+00:00:21.633 --> 00:00:28.367
+Optimise it. The size drops, but nothing runs again until you choose to re-test.
+
+00:00:28.367 --> 00:00:33.533
+Re-test on Simulated 3G, under the same conditions.
+
+00:00:33.533 --> 00:00:41.933
+Same lesson, same connection. The video now loads in 1.5 seconds, instead of 10.5.
+
+00:00:41.933 --> 00:00:44.567
+Now it's your turn.

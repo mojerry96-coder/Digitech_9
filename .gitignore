@@ -1,0 +1,12 @@
+# Dependencies and regenerable output
+node_modules/
+slow-connection-preview/dist/
+slow-connection-preview/tools/frames/
+.DS_Store
+*.log
+
+# Not published (public repo): supplied course materials, packages and the archived first build
+*.pdf
+*.zip
+slow-connection-preview/source-documents/
+_archive/

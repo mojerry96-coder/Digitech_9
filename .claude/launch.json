@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "slow-connection-preview",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["slow-connection-preview/tools/serve.mjs", "8095"],
+      "port": 8095
+    }
+  ]
+}

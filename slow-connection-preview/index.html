@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b192e">
+  <title>Slow Connection Preview</title>
+  <meta name="description" content="Preview a sample lesson on Office Wi-Fi and Simulated 3G, find the heavy media, optimise it, re-test and compare. A private practice; no real course is changed.">
+  <link rel="stylesheet" href="src/styles.css">
+  <link rel="stylesheet" href="src/intro.css">
+</head>
+<body>
+  <!-- House opener (Fix_the_Prompt_Opener.zip / OPENER.md): the storyboard's "Miva University opening" -->
+  <div id="intro" class="intro" role="dialog" aria-modal="true" aria-label="Slow Connection Preview">
+    <div class="intro-motif" aria-hidden="true"></div>
+    <div class="intro-inner">
+      <div class="intro-logos">
+        <span class="intro-logo lg-ekiti"><img src="assets/logos/ekiti.svg" alt="Government of Ekiti State, Nigeria"></span>
+        <span class="intro-rule" aria-hidden="true"></span>
+        <span class="intro-logo lg-miva"><img src="assets/logos/miva.svg" alt="MIVA Open University"></span>
+        <span class="intro-rule" aria-hidden="true"></span>
+        <span class="intro-logo lg-tof"><img src="assets/logos/tof.svg" alt="Tunji Olowolafe Foundation"></span>
+      </div>
+      <p class="intro-tagline">Study. Anywhere. Anyone. Anytime.</p>
+      <h1 class="intro-title"><span class="accent">Slow</span> Connection Preview</h1>
+      <p class="intro-sub">DT01 · DT 05 04</p>
+      <button class="intro-begin" type="button">Begin <svg class="intro-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
+    </div>
+    <button class="intro-skip" type="button">Skip <kbd>Esc</kbd></button>
+  </div>
+
+  <div id="app" inert>
+  <a class="skip-link" href="#control-deck">Skip to diagnostic controls</a>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">[ ]</span><span>Slow Connection Preview</span></div>
+    <div class="top-actions"><img class="miva-logo" src="assets/brand/miva-logo-blue.png" alt="MIVA Open University"><button class="quiet reset" data-action="reset">Reset lesson <span aria-hidden="true">↺</span></button></div>
+  </header>
+  <main class="workspace">
+    <section class="lesson-pane" aria-label="Lesson Preview Frame">
+      <div class="preview-utility"><span>Lesson Preview Frame</span><span id="device-label" class="device-label"></span></div>
+      <div id="lesson-viewport" class="lesson-viewport"><article id="lesson" class="lesson"></article></div>
+      <div id="opening" class="opening" hidden>
+        <video id="opening-video" class="opening-media" poster="assets/opening-river.jpg" muted playsinline preload="metadata" aria-hidden="true">
+          <source src="assets/media/opening-river.mp4" type="video/mp4">
+          <source src="assets/media/opening-river.webm" type="video/webm">
+        </video>
+        <div class="opening-shade"></div>
+        <div class="opening-copy"><span class="eyebrow">LESSON PERFORMANCE LAB</span><h1>Will your lesson<br>load on 3G?</h1><p>Preview. Optimise. Re-test.</p></div>
+        <button id="opening-motion" class="opening-motion" type="button" data-action="opening-motion" aria-label="Play background video"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4 12 8-12 8Z"/></svg><span>Play</span></button>
+      </div>
+    </section>
+    <aside id="control-deck" class="deck" tabindex="-1" aria-label="Control Deck">
+      <div class="deck-heading"><span class="eyebrow">CONTROL DECK</span><h2 id="state-title"></h2><p id="state-subtitle" class="muted"></p></div>
+      <section id="condition-controls" class="condition-controls" aria-label="Test conditions">
+        <div class="control-group"><span class="control-label" id="network-label">Connection</span><div class="segmented two" role="group" aria-labelledby="network-label"><button data-connection="wifi">Office Wi-Fi</button><button data-connection="3g">Simulated 3G</button></div></div>
+        <div class="control-group"><span class="control-label" id="preview-label">Preview on</span><div class="segmented three" role="group" aria-labelledby="preview-label"><button data-device="desktop">Desktop</button><button data-device="tablet">Tablet</button><button data-device="mobile">Mobile</button></div></div>
+      </section>
+      <div id="deck-content" class="deck-content"></div>
+      <div id="deck-footer" class="deck-footer"></div>
+    </aside>
+  </main>
+  </div>
+  <div id="announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+  <dialog id="reference-dialog"><form method="dialog"><button class="dialog-close" aria-label="Close diagnostic reference">×</button></form><span class="eyebrow">DIAGNOSTIC REFERENCE</span><h2>A simplified loading model</h2><p>Office Wi-Fi: file size × 25 milliseconds.<br>Simulated 3G: file size × 250 milliseconds.</p><p>Text loads instantly. Media loads independently. Device width changes the layout, not the timing.</p><p>This is a teaching model. It does not measure your connection or compress real files. Lesson clarity must still be checked in a real course.</p></dialog>
+  <dialog id="walkthrough-dialog" aria-labelledby="wt-title">
+    <div class="wt-head"><span class="eyebrow">45 SECONDS · NARRATED · CAPTIONED</span><form method="dialog"><button id="wt-skip" class="wt-skip">Skip to practice <kbd>Esc</kbd></button></form></div>
+    <h2 id="wt-title">How the practice works</h2>
+    <div class="wt-frame">
+      <video id="walkthrough-video" controls playsinline preload="none" poster="walkthrough/poster.jpg">
+      <source src="walkthrough/walkthrough-1080p.mp4" type="video/mp4">
+      <source src="walkthrough/walkthrough-1080p.webm" type="video/webm">
+    </video>
+      <button id="wt-unmute" class="wt-unmute" type="button" data-action="wt-unmute" hidden>Turn on sound</button>
+      <button id="wt-go" class="wt-go" type="button" data-action="wt-go" hidden>Start Preview <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
+    </div>
+    <details class="wt-transcript"><summary>Transcript</summary><ol><li><span>0 s</span>This is a sample lesson. First, load it on Office Wi-Fi to get a baseline.</li><li><span>7 s</span>Now switch to Simulated 3G. The text appears straight away, but the media takes much longer.</li><li><span>14 s</span>Find the file that is holding things up. Here, it is the 42 MB hero video.</li><li><span>22 s</span>Optimise it. The size drops, but nothing runs again until you choose to re-test.</li><li><span>28 s</span>Re-test on Simulated 3G, under the same conditions.</li><li><span>34 s</span>Same lesson, same connection. The video now loads in 1.5 seconds, instead of 10.5.</li><li><span>42 s</span>Now it's your turn.</li></ol></details>
+    <p class="wt-note">A recording of this tool. Watching it doesn't complete anything; your own run starts with Start Preview.</p>
+  </dialog>
+  <script src="src/model.js"></script>
+  <script src="src/states.js"></script>
+  <script src="src/app.js"></script>
+  <script src="src/intro.js"></script>
+</body>
+</html>

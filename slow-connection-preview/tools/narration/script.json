@@ -1,0 +1,51 @@
+{
+  "voice": "Ifeoma Odumodu - Nigerian Narrator",
+  "voice_id": "reGkImJki7uJOve2F4A0",
+  "model": "eleven_multilingual_v2",
+  "stability": 0.6,
+  "similarity_boost": 0.8,
+  "lines": [
+    {
+      "file": "n1.mp3",
+      "text": "This is a sample lesson. First, load it on Office Wi-Fi to get a baseline.",
+      "caption": "This is a sample lesson. First, load it on Office Wi-Fi to get a baseline.",
+      "duration": 5.695
+    },
+    {
+      "file": "n2.mp3",
+      "text": "Now switch to Simulated 3G. The text appears straight away, but the media takes much longer.",
+      "caption": "Now switch to Simulated 3G. The text appears straight away, but the media takes much longer.",
+      "duration": 7.184
+    },
+    {
+      "file": "n3.mp3",
+      "text": "Find the file that is holding things up. Here, it is the forty-two megabyte hero video.",
+      "caption": "Find the file that is holding things up. Here, it is the 42 MB hero video.",
+      "duration": 6.922
+    },
+    {
+      "file": "n4.mp3",
+      "text": "Optimise it. The size drops, but nothing runs again until you choose to re-test.",
+      "caption": "Optimise it. The size drops, but nothing runs again until you choose to re-test.",
+      "duration": 6.296
+    },
+    {
+      "file": "n5.mp3",
+      "text": "Re-test on Simulated 3G, under the same conditions.",
+      "caption": "Re-test on Simulated 3G, under the same conditions.",
+      "duration": 4.728
+    },
+    {
+      "file": "n6.mp3",
+      "text": "Same lesson, same connection. The video now loads in one and a half seconds, instead of ten and a half.",
+      "caption": "Same lesson, same connection. The video now loads in 1.5 seconds, instead of 10.5.",
+      "duration": 7.941
+    },
+    {
+      "file": "n7.mp3",
+      "text": "Now it's your turn.",
+      "caption": "Now it's your turn.",
+      "duration": 1.384
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280" role="img" aria-labelledby="title desc">
+<title id="title">The water cycle</title><desc id="desc">Water evaporates, condenses into clouds, falls as precipitation and collects again.</desc>
+<defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 6 3 0 6" fill="none" stroke="#2581c8" stroke-width="1.5"/></marker></defs>
+<rect width="700" height="280" fill="#f0f8fb"/>
+<circle cx="81" cy="66" r="25" fill="#efbf55"/>
+<path d="M0 215 120 169 218 208 347 138 485 208 565 161 700 219V280H0" fill="#a3c6ae"/>
+<path d="M0 242 Q170 218 340 245 T700 235V280H0" fill="#80bfdf"/>
+<path d="M245 76 Q230 48 258 43 Q271 13 296 32 Q327 14 339 43 Q371 43 363 75Z" fill="#c3dce8"/>
+<path d="M470 86 Q452 60 480 55 Q490 27 516 45 Q545 27 559 56 Q590 56 581 86Z" fill="#accddf"/>
+<g stroke="#2581c8" stroke-width="3" fill="none" marker-end="url(#arrow)"><path d="M131 203Q111 154 171 115"/><path d="M367 62Q411 42 452 61"/><path d="M585 111Q619 154 586 194"/><path d="M485 247H255"/></g>
+<g stroke="#4b9ac8" stroke-width="3"><path d="M489 105l-7 15m30-15-7 15m30-15-7 15m30-15-7 15"/></g>
+<g font-family="Arial,sans-serif" fill="#27465b" font-size="16"><text x="46" y="143">Evaporation</text><text x="252" y="104">Condensation</text><text x="492" y="147">Precipitation</text><text x="317" y="270">Collection</text></g>
+</svg>

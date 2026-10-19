@@ -1,0 +1,58 @@
+[
+  {
+    "number": "01",
+    "state": "opening",
+    "title": "Opening",
+    "image": "references/01_opening.jpg",
+    "guide": "spec/01_opening.md",
+    "renderer": "renderOpeningState"
+  },
+  {
+    "number": "02",
+    "state": "baseline",
+    "title": "Office Wi-Fi baseline",
+    "image": "references/02_wifi_baseline.jpg",
+    "guide": "spec/02_wifi_baseline.md",
+    "renderer": "renderBaselineState"
+  },
+  {
+    "number": "03",
+    "state": "observe",
+    "title": "Observe 3G loading",
+    "image": "references/03_3g_loading.jpg",
+    "guide": "spec/03_3g_loading.md",
+    "renderer": "renderObserveState"
+  },
+  {
+    "number": "04",
+    "state": "diagnose",
+    "title": "Inspect a media file",
+    "image": "references/04_media_inspection.jpg",
+    "guide": "spec/04_media_inspection.md",
+    "renderer": "renderDiagnoseState"
+  },
+  {
+    "number": "05",
+    "state": "pending",
+    "title": "Optimised; re-test required",
+    "image": "references/05_retest_required.jpg",
+    "guide": "spec/05_retest_required.md",
+    "renderer": "renderPendingState"
+  },
+  {
+    "number": "06",
+    "state": "compare",
+    "title": "Compare the re-test",
+    "image": "references/06_retest_comparison.jpg",
+    "guide": "spec/06_retest_comparison.md",
+    "renderer": "renderCompareState"
+  },
+  {
+    "number": "07",
+    "state": "summary",
+    "title": "Review and transfer",
+    "image": "references/07_diagnostic_summary.jpg",
+    "guide": "spec/07_diagnostic_summary.md",
+    "renderer": "renderSummaryState"
+  }
+]

@@ -1,0 +1,49 @@
+{
+  "fps": 30,
+  "frames": 1337,
+  "duration": 44.56666666666667,
+  "cues": [
+    {
+      "start": 0.5,
+      "text": "This is a sample lesson. First, load it on Office Wi-Fi to get a baseline.",
+      "audio": "n1.mp3",
+      "end": 6.633333333333334
+    },
+    {
+      "start": 6.633333333333334,
+      "text": "Now switch to Simulated 3G. The text appears straight away, but the media takes much longer.",
+      "audio": "n2.mp3",
+      "end": 14.266666666666667
+    },
+    {
+      "start": 14.266666666666667,
+      "text": "Find the file that is holding things up. Here, it is the 42 MB hero video.",
+      "audio": "n3.mp3",
+      "end": 21.633333333333333
+    },
+    {
+      "start": 21.633333333333333,
+      "text": "Optimise it. The size drops, but nothing runs again until you choose to re-test.",
+      "audio": "n4.mp3",
+      "end": 28.366666666666667
+    },
+    {
+      "start": 28.366666666666667,
+      "text": "Re-test on Simulated 3G, under the same conditions.",
+      "audio": "n5.mp3",
+      "end": 33.53333333333333
+    },
+    {
+      "start": 33.53333333333333,
+      "text": "Same lesson, same connection. The video now loads in 1.5 seconds, instead of 10.5.",
+      "audio": "n6.mp3",
+      "end": 41.93333333333333
+    },
+    {
+      "start": 41.93333333333333,
+      "text": "Now it's your turn.",
+      "audio": "n7.mp3",
+      "end": 44.56666666666667
+    }
+  ]
+}
