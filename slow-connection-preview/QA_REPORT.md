@@ -4,7 +4,7 @@ Run: `node tests/verify.cjs` against this build, in headless Google Chrome on ma
 
 ## Result
 
-**24 of 24 checks passed** (the package's 20 plus 4 new ones). No browser JavaScript errors.
+**26 of 26 checks passed** (the package's 20 plus 6 new ones). No browser JavaScript errors.
 
 1. Fresh start: original lesson, no fabricated run history
 2. Office Wi-Fi baseline uses 25 ms/MB
@@ -29,7 +29,9 @@ Run: `node tests/verify.cjs` against this build, in headless Google Chrome on ma
 21. **New:** the end-card Start Preview is a real button that starts the practice
 22. **New:** the Kling hero clip plays only after its simulated load, without opening inspection
 23. **New:** the narrated walkthrough plays in a closable dialog (Escape closes it and stops playback, voice included), and the practice state stays untouched
-24. No browser JavaScript errors
+24. **New:** 1440 px opener: each logo stage targets the screen centre and the finished line sits centred (max 0.2 px off)
+25. **New:** 375 px opener: the same (max 0.5 px off), with no sideways scroll
+26. No browser JavaScript errors
 
 ## Also checked in the browser
 
@@ -43,6 +45,10 @@ Run: `node tests/verify.cjs` against this build, in headless Google Chrome on ma
 - 44.6 s, H.264 + AAC 160 kbps, levelled to −16 LUFS (peak −4.4 dBFS).
 - Silence analysis shows each narration line separated by 0.37–0.6 s gaps, with no overlaps.
 - Contact-sheet frames confirm that each action happens during its own line.
+
+## Opener alignment fix (19 Oct 2026)
+
+The finished logo line sat 146 px right of centre (16 px at phone width). `centreOn()` mixed two coordinate spaces: current Chrome treats the transformed row as the logos' `offsetParent`, while the row's own position was measured against `.intro-inner`. It now measures everything from the row's left edge, which works whichever parent an engine reports. Checks 24 and 25 cover it.
 
 ## Limits
 

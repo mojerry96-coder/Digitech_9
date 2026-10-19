@@ -20,14 +20,17 @@
 
   const at = (ms, fn) => timers.push(setTimeout(fn, ms));
 
-  /** Slide the row so the arrived logos sit centred. Layout positions only (no entry scale). */
+  /** Slide the row so the arrived logos sit centred. Layout positions only (no entry scale).
+      Everything is measured from the row's own left edge. Current Chrome treats the transformed
+      row as the logos' offsetParent while other engines use .intro-inner, so mixing the two
+      coordinate spaces pushed the finished line off-centre. */
+  const leftInRow = (el) => el.offsetLeft - (el.offsetParent === row ? 0 : row.offsetLeft);
   function centreOn(count) {
     const shown = logos.slice(0, Math.max(count, 1));
     const first = shown[0];
     const last = shown[shown.length - 1];
-    const mid = (first.offsetLeft + last.offsetLeft + last.offsetWidth) / 2;
-    const rowMid = row.offsetLeft + row.offsetWidth / 2;
-    row.style.setProperty("--shift", `${rowMid - mid}px`);
+    const mid = (leftInRow(first) + leftInRow(last) + last.offsetWidth) / 2;
+    row.style.setProperty("--shift", `${row.offsetWidth / 2 - mid}px`);
   }
 
   function showBegin() {

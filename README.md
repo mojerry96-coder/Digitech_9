@@ -7,7 +7,7 @@ Everything is in [`slow-connection-preview/`](slow-connection-preview/README.md)
 - **The simulation:** the house partner-logo opener, the narrated walkthrough, then one persistent page with seven states (a light Lesson Preview Frame and a navy Control Deck)
 - **Generated media:** lesson imagery (Nano Banana Pro) and two Kling 3.0 clips (see [`assets/ASSET_PROMPTS.md`](slow-connection-preview/assets/ASSET_PROMPTS.md))
 - **The 45 s narrated walkthrough:** the ElevenLabs Nigerian narrator, with captions and a transcript, recorded from the real build
-- **The verification suite:** 24 checks (see [`QA_REPORT.md`](slow-connection-preview/QA_REPORT.md))
+- **The verification suite:** 26 checks (see [`QA_REPORT.md`](slow-connection-preview/QA_REPORT.md))
 
 ```bash
 node slow-connection-preview/tools/serve.mjs 8095

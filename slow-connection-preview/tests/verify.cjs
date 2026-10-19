@@ -70,6 +70,27 @@ const url=pathToFileURL(path.join(root,process.env.PREVIEW_PAGE||'index.html')).
  await page.keyboard.press('Escape');assert.equal(await page.locator('#walkthrough-dialog').evaluate(d=>d.open),false);
  await page.waitForFunction(()=>document.getElementById('walkthrough-video').paused,null,{timeout:2000});
  assert.equal((await state()).started,false);assert.equal((await state()).history.length,0);pass('Walkthrough plays in a closable dialog and does not touch practice state');
+ await page.emulateMedia({reducedMotion:'no-preference'}); // the opener's animated stages (reduced motion shows the finished frame at once)
+ for(const width of [1440,375]){
+  await page.setViewportSize({width,height:width>800?900:812});await page.goto(url);
+  // Each stage: where the row is sliding to (its --shift target) must put the arrived logos' centre on the screen centre.
+  const offsets=[];
+  for(const n of [1,2,3]){
+   await page.waitForFunction(k=>document.querySelectorAll('.intro-logo.in').length>=k,n,{timeout:6000});
+   offsets.push(await page.evaluate(k=>{const row=document.querySelector('.intro-logos');const ls=[...row.querySelectorAll('.intro-logo')].slice(0,k);
+     const restingLeft=row.offsetParent.getBoundingClientRect().left+row.offsetLeft; // offsetLeft ignores the slide transform
+     const target=parseFloat(row.style.getPropertyValue('--shift'))||0;
+     const left=el=>el.offsetLeft-(el.offsetParent===row?0:row.offsetLeft);
+     const mid=(left(ls[0])+left(ls[k-1])+ls[k-1].offsetWidth)/2;
+     return Math.abs(restingLeft+target+mid-innerWidth/2);},n));
+  }
+  await page.waitForFunction(()=>document.querySelector('.intro').classList.contains('st-begin'));await page.waitForTimeout(1000);
+  offsets.push(await page.evaluate(()=>{const ls=[...document.querySelectorAll('.intro-logo')].map(l=>l.getBoundingClientRect());return Math.abs((ls[0].left+ls[2].right)/2-innerWidth/2);}));
+  assert.ok(offsets.every(o=>o<=2),`${width}px: logo stages off-centre by ${offsets.map(o=>o.toFixed(1)).join(', ')} px`);
+  assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
+  pass(`${width}px opener: each logo stage targets the centre and the finished line sits centred (max ${Math.max(...offsets).toFixed(1)} px off)`);
+ }
+ await page.setViewportSize({width:1366,height:768});
  await page.goto(url);await page.locator('.intro-begin').waitFor({state:'visible'});assert.equal(await page.evaluate(()=>document.getElementById('app').inert),true);
  await page.waitForFunction(()=>document.querySelector('.intro').classList.contains('st-begin'));await page.locator('.intro-begin').click();
  assert.equal(await page.evaluate(()=>document.getElementById('app').inert),false);

@@ -71,7 +71,8 @@ The package's code, model, seven state renderers, copy and timing rules are used
      - **Watch the walkthrough · 45 s** on the opening state replays it later.
      - Watching never changes the practice state. `?nowalk` makes Begin go straight to the opening state.
    - **Changing a line:** regenerate its `nN.mp3` with the same voice settings, update `script.json`, then re-record and re-mix. The timings follow the new audio.
-6. **Test harness portability.** `tests/browser.cjs` uses its low-memory Chromium flags on Linux only, because they crash Chrome on macOS. `tests/verify.cjs` gained four checks: Begin → walkthrough with sound → Skip lands on Start Preview; the end-card Start Preview starts the practice; the walkthrough dialog leaves the practice state untouched; and the Kling clip plays only after its simulated load without opening inspection.
+6. **Test harness portability.** `tests/browser.cjs` uses its low-memory Chromium flags on Linux only, because they crash Chrome on macOS. `tests/verify.cjs` gained six checks: Begin → walkthrough with sound → Skip lands on Start Preview; the end-card Start Preview starts the practice; the walkthrough dialog leaves the practice state untouched; the Kling clip plays only after its simulated load without opening inspection; and the opener's logo stages centre correctly at 1440 px and 375 px.
+7. **Opener alignment fix.** `centreOn()` in `src/intro.js` now measures the logos and the row from the row's own left edge. Before, the finished logo line sat 146 px right of centre in current Chrome (see QA_REPORT.md).
 
 Provenance, prompts and job IDs for every generated asset are in `assets/ASSET_PROMPTS.md`.
 
